@@ -35,7 +35,7 @@ public static MauiApp CreateMauiApp()
             {
                 ios.FinishedLaunching((a, b) =>
                 { 
-                    // disable MS Version do it doesn't interfere with IQKeyboardManager 
+                    // disable MS Version so it doesn't interfere with IQKeyboardManager 
                     KeyboardAutoManagerScroll.Disconnect();
                     IQKBW.EnableKB();
                     
