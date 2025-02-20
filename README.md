@@ -10,12 +10,15 @@
 https://pkgs.dev.azure.com/xamarin/public/_packaging/maui-nativelibraryinterop/nuget/v3/index.json
 ```
 
+### YOUR BUILD MAY TAKE LONGER AS SLIM BINDING AS TO GENERATE XCFRAMEWORK ON THE FLY
+
 ### USAGE
 ```C#
 // in MauiProgram.cs
 #if IOS
 
 using Maui.IQKeyboardManager;
+using Microsoft.Maui.Platform;
 using UIKit;
 
 #endif
@@ -31,7 +34,9 @@ public static MauiApp CreateMauiApp()
             events.AddiOS(ios =>
             {
                 ios.FinishedLaunching((a, b) =>
-                {
+                { 
+                    // disable MS Version do it doesn't interfere with IQKeyboardManager 
+                    KeyboardAutoManagerScroll.Disconnect();
                     IQKBW.EnableKB();
                     
                     return true;
