@@ -47,6 +47,7 @@ public static MauiApp CreateMauiApp()
                     // disable MS Version so it doesn't interfere with IQKeyboardManager 
                     KeyboardAutoManagerScroll.Disconnect();
                     IQKeyboardManager.SharedManager.Enable = true;
+                    IQKeyboardManager.SharedManager.EnableAutoToolbar = false;
                     
                     return true;
                 });
