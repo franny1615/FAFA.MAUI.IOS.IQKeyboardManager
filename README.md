@@ -15,6 +15,10 @@
 
 [download sharpie](https://learn.microsoft.com/en-us/previous-versions/xamarin/ios/platform/binding-objective-c/walkthrough?tabs=macos)
 
+* run ```sharpie bind -sdk iphoneos -scope IQKeyboardManager.framework/Headers/*.h;```
+* this generates a ton of garbage, find IQKeyboardManager in ```ApiDefinitions.cs```, delete the rest. 
+* same deal with ```StructsAndEnums.cs```
+
 ### USAGE
 ```C#
 // in MauiProgram.cs
