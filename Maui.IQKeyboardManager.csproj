@@ -17,11 +17,11 @@
 		<PackageProjectUrl>https://github.com/franny1615/FAFA.MAUI.IOS.IQKeyboardManager</PackageProjectUrl>
 		<RepositoryURL>https://github.com/franny1615/FAFA.MAUI.IOS.IQKeyboardManager</RepositoryURL>
 		<Description>Slim binding of IQKeyboardManager.</Description>
-		<PackageReleaseNotes>Slim binding of IQKeyboardManager.</PackageReleaseNotes>
+		<PackageReleaseNotes>.NET MAUI Bindings for IQKeyboardManager.</PackageReleaseNotes>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<RequireLicenseAcceptance>False</RequireLicenseAcceptance>
-		<Version>1.0.1</Version>
+		<Version>1.0.2</Version>
 		<Authors>F.F</Authors>
 		<Company>F.F</Company>
 	</PropertyGroup>
