@@ -19,6 +19,8 @@
 * this generates a ton of garbage, find IQKeyboardManager in ```ApiDefinitions.cs```, delete the rest. 
 * same deal with ```StructsAndEnums.cs```
 
+It may not work as expected, I'm not an expert, in the end I took the ```ApiDefinitions.cs``` from [here](https://github.com/Emtiaz-Tafsir/Maui.IQKeyboardManager/tree/master)
+
 ### USAGE
 ```C#
 // in MauiProgram.cs

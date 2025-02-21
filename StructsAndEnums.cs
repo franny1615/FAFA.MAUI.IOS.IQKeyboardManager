@@ -1,7 +1,15 @@
 using System;
 using ObjCRuntime;
 
-namespace Maui.IQKeyboardManager;
+namespace Maui.IQKB;
+
+[Native]
+public enum IQAutoToolbarManageBehaviour : long
+{
+	Subviews,
+	Tag,
+	Position
+}
 
 [Native]
 public enum IQAutoToolbarManageBehavior : long

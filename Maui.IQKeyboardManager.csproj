@@ -9,6 +9,8 @@
         <IsBindingProject>true</IsBindingProject>
         <SupportedOSPlatformVersion>15.0</SupportedOSPlatformVersion>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        
+        <Trimmable>True</Trimmable>
     </PropertyGroup>
 
     <PropertyGroup>
@@ -33,6 +35,13 @@
     <ItemGroup>
         <ObjcBindingApiDefinition Include="ApiDefinitions.cs" />
         <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
-        <ObjcBindingNativeFramework Include="IQKeyboardManager.framework" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <NativeReference Include="IQKeyboardManager.framework">
+            <Kind>Framework</Kind>
+            <SmartLink>False</SmartLink>
+            <ForceLoad>True</ForceLoad>
+        </NativeReference>
     </ItemGroup>
 </Project>
