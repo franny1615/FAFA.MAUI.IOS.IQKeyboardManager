@@ -2,16 +2,16 @@
 
 [original library creator](https://github.com/hackiftekhar/IQKeyboardManager)
 
-### YOU MAY GENERATE A NEW XCFRAMEWORK BY DOING THE FOLLOWING
+### YOU MAY GENERATE A NEW FRAMEWORK BY DOING THE FOLLOWING
 1. Clone the original creators repository
 2. Open terminal inside the root directory of the project
 3. Run a ```pod install``` (assumption is you had cocoapods installed)
 4. Run the following ```xcodebuild -target IQKeyboardManager -configuration Release -sdk iphoneos BUILD_DIR=output```
-5. One directory up, there will be an ```output``` folder which will have the updated xcframework
+5. There will now be an ```output``` folder which will have the updated .framework
 6. Copy over the generated .framework into the .net project, rebuild the library
-7. Bindings may change, so you will have to update ```ApiDefinition.cs``` and ```StructsAndEnums.cs``` manually.
+7. Bindings may change, so you will have to update ```ApiDefinition.cs``` and ```StructsAndEnums.cs``` manually (recommended to do manually).
 
-### REGENERATE FILES
+### YOU MAY TRY TO AUTO REGENERATE THE BINDING FILES USING SHARPIE
 
 [download sharpie](https://learn.microsoft.com/en-us/previous-versions/xamarin/ios/platform/binding-objective-c/walkthrough?tabs=macos)
 
