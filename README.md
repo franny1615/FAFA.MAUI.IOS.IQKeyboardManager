@@ -1,16 +1,19 @@
-# IQKeyboardManager MAUI Slim Binding
+# IQKeyboardManager MAUI Bindings
 
-[original person](https://github.com/hackiftekhar/IQKeyboardManager)
+[original library creator](https://github.com/hackiftekhar/IQKeyboardManager)
 
-[slim binding documentation article](https://devblogs.microsoft.com/dotnet/native-library-interop-dotnet-maui/)
+### YOU MAY GENERATE A NEW XCFRAMEWORK BY DOING THE FOLLOWING
+1. Clone the original creators repository
+2. Open terminal inside the root directory of the project
+3. Run a ```pod install``` (assumption is you had cocoapods installed)
+4. Run the following ```xcodebuild -target IQKeyboardManager -configuration Release -sdk iphoneos BUILD_DIR=output```
+5. One directory up, there will be an ```output``` folder which will have the updated xcframework
+6. Copy over the generated .framework into the .net project, rebuild the library
+7. Bindings may change, so you will have to update ```ApiDefinition.cs``` and ```StructsAndEnums.cs``` manually.
 
-### YOU NEED THE FOLLOWING FEED IN YOUR NUGET.CONFIG TO BUILD
+### REGENERATE FILES
 
-```
-https://pkgs.dev.azure.com/xamarin/public/_packaging/maui-nativelibraryinterop/nuget/v3/index.json
-```
-
-### YOUR BUILD MAY TAKE LONGER AS SLIM BINDING AS TO GENERATE XCFRAMEWORK ON THE FLY
+[download sharpie](https://learn.microsoft.com/en-us/previous-versions/xamarin/ios/platform/binding-objective-c/walkthrough?tabs=macos)
 
 ### USAGE
 ```C#
@@ -37,7 +40,7 @@ public static MauiApp CreateMauiApp()
                 { 
                     // disable MS Version so it doesn't interfere with IQKeyboardManager 
                     KeyboardAutoManagerScroll.Disconnect();
-                    IQKBW.EnableKB();
+                    IQKeyboardManager.SharedManager.Enable = true;
                     
                     return true;
                 });

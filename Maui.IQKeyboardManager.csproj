@@ -2,17 +2,13 @@
 
     <PropertyGroup>
         <TargetFrameworks>net8.0-ios;</TargetFrameworks>
-        <UseMaui>true</UseMaui>
         <SingleProject>true</SingleProject>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-
-        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.0</SupportedOSPlatformVersion>
-    
-        <IsTrimmable>true</IsTrimmable>
+        
         <IsBindingProject>true</IsBindingProject>
-
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <SupportedOSPlatformVersion>15.0</SupportedOSPlatformVersion>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     </PropertyGroup>
 
     <PropertyGroup>
@@ -35,23 +31,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
+        <ObjcBindingApiDefinition Include="ApiDefinitions.cs" />
         <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
-    </ItemGroup>
-    
-    <!-- Reference to Xcode project -->
-    <ItemGroup>
-        <NLIXcodeProjectReference Include="Native/IQKBWrapper/IQKBWrapper.xcodeproj">
-            <SchemeName>IQKBWrapper</SchemeName>
-        </NLIXcodeProjectReference>
-    </ItemGroup>
-
-    <ItemGroup>
-        <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.100"/>
-        <PackageReference Include="CommunityToolkit.Maui.NativeLibraryInterop.BuildTasks" Version="0.0.1-pre1" PrivateAssets="all" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Native\" />
+        <ObjcBindingNativeFramework Include="IQKeyboardManager.framework" />
     </ItemGroup>
 </Project>
