@@ -6,9 +6,12 @@
 1. Clone the original creators repository
 2. Open terminal inside the root directory of the project
 3. Run a ```pod install``` (assumption is you had cocoapods installed)
-4. Run the following ```xcodebuild -target IQKeyboardManager -configuration Release -sdk iphoneos BUILD_DIR=output```
-5. There will now be an ```output``` folder which will have the updated .framework
-6. Copy over the generated .framework into the .net project, rebuild the library
+4. Run the following commands
+   1. ```xcodebuild -target IQKeyboardManager -configuration Release -sdk iphoneos BUILD_DIR=output```
+   2. ```xcodebuild -target IQKeyboardManager -configuration Release -sdk iphonesimulator BUILD_DIR=output```
+   3. ```xcodebuild -create-xcframework -framework output/Release-iphoneos/IQKeyboardManager.framework -framework output/Release-iphonesimulator/IQKeyboardManager.framework -output output/IQKeyboardManager.xcframework```
+5. There will now be an ```output``` folder which will have the updated .xcframework
+6. Copy over the generated .xcframework into the .net project, rebuild the library
 7. Bindings may change, so you will have to update ```ApiDefinition.cs``` and ```StructsAndEnums.cs``` manually (recommended to do manually).
 
 ### YOU MAY TRY TO AUTO REGENERATE THE BINDING FILES USING SHARPIE
